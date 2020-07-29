@@ -5,12 +5,18 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import ThemeTopLayout from "gatsby-theme-material-ui-top-layout/src/components/top-layout"
+import { theme } from "../components/UI/Theme"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  return <Layout location={location} title={siteTitle}></Layout>
+  return (
+    <ThemeTopLayout theme={theme}>
+      <Layout location={location} title={siteTitle} />
+    </ThemeTopLayout>
+  )
 }
 
 export default BlogIndex

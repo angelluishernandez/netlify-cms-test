@@ -22,6 +22,7 @@ const Navbar = ({
   handleDrawerOpen,
   setOpen,
   handleDrawerClose,
+  theme,
 }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -36,7 +37,7 @@ const Navbar = ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      backgroundColor: "#ee5a5a",
+      // backgroundColor: theme.palette.navBar.main,
     },
     toolBar: {
       display: "flex",
