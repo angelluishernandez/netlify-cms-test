@@ -1,11 +1,26 @@
-import { createMuiTheme } from "@material-ui/core/styles"
+// import React from "react"
+// import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 
-export const theme = createMuiTheme({
-  palette: {
-    primary: { main: "#4c5454" },
-    secondary: { main: "#ff715b" },
-    mainWhite: { main: "#FFFFFF" },
-    navBar: { main: "#523f38" },
-    fontColor: { main: "#523f38" },
-  },
-})
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: { light: "#9adcfb", main: "#81d4fa", dark: "#5a94af" },
+//     secondary: { light: "#EEEEEE", main: "#BDBDBD", dark: "#616161" },
+//     error: { light: "#e57373", main: "#f44336", dark: "#d32f2f" },
+//     warning: { light: "#ffb74d", main: "#ff9800", dark: "#f57c00" },
+//     info: { light: "#64b5f6", main: "#2196f3", dark: "#1976d2" },
+//     success: { light: "#81c784", main: "#4caf50", dark: "#388e3c" },
+//   },
+//   typography: {
+//     fontFamily: `'Open Sans', sans-serif`,
+//     fontSize: 14,
+//     fontWeightLight: 300,
+//     fontWeightRegular: 400,
+//     fontWeightMedium: 600,
+//   },
+// })
+
+// const Theme = ({ path, children }) => {
+//   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+// }
+
+// export default Theme

@@ -83,9 +83,17 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    `custom-mui-theme`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sass`,
-    `gatsby-theme-material-ui`,
 
     `node-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

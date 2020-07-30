@@ -14,6 +14,7 @@ import { Menu } from "@material-ui/icons"
 // Window resize custom hook
 
 import useWindowDimensions from "../hooks/useWindowDimensions"
+import { theme } from "../components/UI/Theme"
 
 const Navbar = ({
   currentUser,
@@ -22,26 +23,41 @@ const Navbar = ({
   handleDrawerOpen,
   setOpen,
   handleDrawerClose,
-  theme,
 }) => {
+  console.log(theme)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
-  const [width] = useWindowDimensions()
 
+  const { width } = useWindowDimensions()
   const useStyles = makeStyles(theme => ({
     grow: {
       flexGrow: 1,
     },
     appBar: {
       transition: theme.transitions.create(["margin", "width"], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
+        // easing: theme.transitions.easing.sharp,
+        // duration: theme.transitions.duration.leavingScreen,
       }),
-      // backgroundColor: theme.palette.navBar.main,
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.secondary.main,
     },
     toolBar: {
       display: "flex",
       justifyContent: "space-between",
+    },
+    mainHeader: {
+      display: "flex",
+      justifyContent: "space-around",
+      backgroundColor: "white",
+      color: "black",
+    },
+
+    links: {
+      color: "white",
+      fontSize: theme.typography.fontSize,
+      fontFamily: theme.typography.fontFamily,
+      fontWeight: theme.typography.fontWeightBold,
+      fontStyle: "normal",
     },
 
     menuButton: {
@@ -54,9 +70,15 @@ const Navbar = ({
 
   return (
     <AppBar
-      position="fixed"
+      position="static"
       className={clsx(classes.appBar, { [classes.appBarShift]: open })}
     >
+      <Toolbar className={classes.mainHeader}>
+        <img src="images/logo.png" alt="logo" />
+        <Link to="/">
+          <Typography variant="h2">Centro Primero de Mayo</Typography>
+        </Link>
+      </Toolbar>
       <Toolbar className={classes.toolBar}>
         <div>
           <IconButton
@@ -71,8 +93,12 @@ const Navbar = ({
         </div>
         <div>
           <Link to="/">
-            <Typography variant="h6" noWrap className="mr-2">
-              Centro 1ª de Mayo
+            <Typography
+              variant="body1"
+              noWrap
+              className={`mr-2 ${classes.links}`}
+            >
+              Inicio
             </Typography>
           </Link>
         </div>
@@ -81,14 +107,22 @@ const Navbar = ({
           <>
             <div>
               <Link to="/informacion">
-                <Typography variant="h6" noWrap className="mr-2">
+                <Typography
+                  variant="body1"
+                  noWrap
+                  className={`mr-2 ${classes.links}`}
+                >
                   Información sobre el centro
                 </Typography>
               </Link>
             </div>
             <div>
               <Link to="/noticias">
-                <Typography variant="h6" noWrap className="mr-2">
+                <Typography
+                  variant="body1"
+                  noWrap
+                  className={`mr-2 ${classes.links}`}
+                >
                   Noticias
                 </Typography>
               </Link>
@@ -96,7 +130,11 @@ const Navbar = ({
 
             <div>
               <Link to="/noticias">
-                <Typography variant="h6" noWrap className="mr-2">
+                <Typography
+                  variant="body1"
+                  noWrap
+                  className={`mr-2 ${classes.links}`}
+                >
                   Noticias
                 </Typography>
               </Link>

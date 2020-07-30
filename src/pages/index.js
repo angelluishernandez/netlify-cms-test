@@ -4,22 +4,21 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import ThemeTopLayout from "gatsby-theme-material-ui-top-layout/src/components/top-layout"
 import { theme } from "../components/UI/Theme"
 
-const BlogIndex = ({ data, location }) => {
+const SiteIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <ThemeTopLayout theme={theme}>
-      <Layout location={location} title={siteTitle} />
-    </ThemeTopLayout>
+    <Layout>
+      <h1>{siteTitle}</h1>
+    </Layout>
   )
 }
 
-export default BlogIndex
+export default SiteIndex
 
 export const pageQuery = graphql`
   query {

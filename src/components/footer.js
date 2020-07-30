@@ -15,7 +15,6 @@ const Footer = () => {
   `)
 
   const { name, summary } = data.site.siteMetadata.author
-  console.log(name, summary)
 
   return (
     <div>
