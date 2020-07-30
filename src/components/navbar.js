@@ -14,7 +14,6 @@ import { Menu } from "@material-ui/icons"
 // Window resize custom hook
 
 import useWindowDimensions from "../hooks/useWindowDimensions"
-import { theme } from "../components/UI/Theme"
 
 const Navbar = ({
   currentUser,
@@ -24,7 +23,6 @@ const Navbar = ({
   setOpen,
   handleDrawerClose,
 }) => {
-  console.log(theme)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
 

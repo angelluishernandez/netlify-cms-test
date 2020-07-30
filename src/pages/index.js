@@ -4,8 +4,6 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ThemeTopLayout from "gatsby-theme-material-ui-top-layout/src/components/top-layout"
-import { theme } from "../components/UI/Theme"
 
 const SiteIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
