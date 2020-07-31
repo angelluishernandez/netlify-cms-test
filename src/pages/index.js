@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import CarouselItem from "../components/carousel"
 import { Typography } from "@material-ui/core"
 
-const SiteIndex = ({ data, location }) => {
+const SiteIndex = () => {
   // const siteTitle = data.site.siteMetadata.title
   // const posts = data.allMarkdownRemark.edges
 
@@ -30,28 +30,3 @@ const SiteIndex = ({ data, location }) => {
 }
 
 export default SiteIndex
-
-// export const pageQuery = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-//       edges {
-//         node {
-//           excerpt
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             title
-//             description
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
