@@ -12,10 +12,11 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: `'Open Sans', sans-serif`,
-    fontSize: 14,
+    fontSize: 12,
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 600,
+    fontWeightBold: 800,
   },
 })
 

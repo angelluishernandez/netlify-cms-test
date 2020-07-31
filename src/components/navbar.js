@@ -23,10 +23,17 @@ const Navbar = ({
   setOpen,
   handleDrawerClose,
 }) => {
+  // Grapql queries
+
+  // State
+
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
 
-  const { width } = useWindowDimensions()
+  // const { width } = useWindowDimensions()
+
+  // Styles MUI
+
   const useStyles = makeStyles(theme => ({
     grow: {
       flexGrow: 1,
@@ -101,44 +108,44 @@ const Navbar = ({
           </Link>
         </div>
 
-        {width < 700 ? null : (
-          <>
-            <div>
-              <Link to="/informacion">
-                <Typography
-                  variant="body1"
-                  noWrap
-                  className={`mr-2 ${classes.links}`}
-                >
-                  Información sobre el centro
-                </Typography>
-              </Link>
-            </div>
-            <div>
-              <Link to="/noticias">
-                <Typography
-                  variant="body1"
-                  noWrap
-                  className={`mr-2 ${classes.links}`}
-                >
-                  Noticias
-                </Typography>
-              </Link>
-            </div>
+        {/* {width < 700 ? null : ( */}
+        <>
+          <div>
+            <Link to="/informacion">
+              <Typography
+                variant="body1"
+                noWrap
+                className={`mr-2 ${classes.links}`}
+              >
+                Información sobre el centro
+              </Typography>
+            </Link>
+          </div>
+          <div>
+            <Link to="/noticias">
+              <Typography
+                variant="body1"
+                noWrap
+                className={`mr-2 ${classes.links}`}
+              >
+                Noticias
+              </Typography>
+            </Link>
+          </div>
 
-            <div>
-              <Link to="/noticias">
-                <Typography
-                  variant="body1"
-                  noWrap
-                  className={`mr-2 ${classes.links}`}
-                >
-                  Noticias
-                </Typography>
-              </Link>
-            </div>
-          </>
-        )}
+          <div>
+            <Link to="/noticias">
+              <Typography
+                variant="body1"
+                noWrap
+                className={`mr-2 ${classes.links}`}
+              >
+                Noticias
+              </Typography>
+            </Link>
+          </div>
+        </>
+        {/* )} */}
 
         <div>
           <ExitToAppSharpIcon />

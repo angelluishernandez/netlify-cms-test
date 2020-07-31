@@ -1,81 +1,71 @@
 import React from "react"
-
-import { Drawer } from "@material-ui/core"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
-import ChevronRightIcon from "@material-ui/icons/ChevronRight"
-import IconButton from "@material-ui/core/IconButton"
-import { Link } from "react-router-dom"
-// import SideBarContent from "./SidebarContent/SidebarContent"
-
-const drawerWidth = 240
+import { Paper, Typography, Divider, FormHelperText } from "@material-ui/core"
+import FacebookIcon from "@material-ui/icons/Facebook"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import { makeStyles } from "@material-ui/core/styles"
+import { Col, Container } from "react-bootstrap"
+import { Link } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
-  drawer: {
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
+  root: {
     display: "flex",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "space-between",
+    width: "100%",
+    height: "70vh",
     alignItems: "center",
-    background: "#f37d7d",
-    height: "10vh",
+    padding: "2em",
+    fontFamily: theme.typography.fontFamily,
   },
-  drawerButton: {
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
+  paper: {
+    minHeight: "30%",
+    width: "100%",
+
+    position: "relative",
+  },
+  links: {
+    fontWeight: theme.typography.fontWeightBold,
+    fontStyle: "none",
+    padding: ".5em",
+  },
+  socialMediaContainer: {
+    display: "flex",
+    justifyContent: "space-around",
+    position: "absolute",
+    bottom: 0,
+    padding: "1.5em",
   },
 }))
 
-const Sidebar = ({
-  open,
-  setOpen,
-  handleDrawerOpen,
-  handleDrawerClose,
-  window,
-}) => {
+// If the width of the screen is lower than 900 a Drawer should be used
+
+const Sidebar = ({}) => {
   const classes = useStyles()
 
-  const theme = useTheme()
-
   return (
-    <nav className={classes.drawer} aria-label="mailbox folders">
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor={"left"}
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        This is the sidebar
-        {/* <div className={classes.drawerHeader}>
-          <div>
-            <IconButton
-              onClick={handleDrawerClose}
-              className={classes.drawerButton}
-            >
-              {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
-              ) : (
-                <ChevronRightIcon />
-              )}
-            </IconButton>
-          </div>
-        </div>
-        <SideBarContent /> */}
-      </Drawer>
-    </nav>
+    <Col xs={2} className={classes.root}>
+      <Paper className={classes.paper} elevation={1} p={2}>
+        <Link>
+          <Typography variant="h6" className={classes.links}>
+            NOTICIAS
+          </Typography>
+        </Link>
+        <Divider />
+        <Link>
+          <Typography variant="h6" className={classes.links}>
+            SOBRE EL CENTRO
+          </Typography>
+        </Link>
+        <Divider />
+        <Container className={classes.socialMediaContainer}>
+          <a href="">
+            <FacebookIcon />
+          </a>
+          |
+          <a href="">
+            <TwitterIcon />
+          </a>
+        </Container>
+      </Paper>
+    </Col>
   )
 }
 

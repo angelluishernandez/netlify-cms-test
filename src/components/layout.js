@@ -1,11 +1,14 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-
-import { rhythm, scale } from "../utils/typography"
+import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "./navbar"
 import Footer from "./footer"
 import "../styles/styles.scss"
 import Sidebar from "./sidebar"
+
+// React Bootstrap imports
+
+import { Container, Row, Col } from "react-bootstrap"
 
 const Layout = ({ location, title, children }) => {
   const [open, setOpen] = useState(false)
@@ -23,8 +26,23 @@ const Layout = ({ location, title, children }) => {
   return (
     <div>
       <Navbar {...props} />
-      <Sidebar {...props} />
-      {children}
+      <Container fluid>
+        <Row>
+          <Sidebar />
+
+          <Col xs={8} style={{ backgroundColor: "black" }}>
+            <ul>
+              Content :<li>Carousel</li>
+              <li>News</li>
+              <li>Activities</li>
+            </ul>
+            {children}
+          </Col>
+          <Col xs={2} style={{ backgroundColor: "red" }}>
+            Social media
+          </Col>
+        </Row>
+      </Container>
       <Footer />{" "}
     </div>
   )
