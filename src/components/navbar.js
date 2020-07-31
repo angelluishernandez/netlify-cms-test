@@ -75,7 +75,7 @@ const Navbar = ({
 
   return (
     <AppBar
-      position="static"
+      position="relative"
       className={clsx(classes.appBar, { [classes.appBarShift]: open })}
     >
       <Toolbar className={classes.mainHeader}>

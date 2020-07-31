@@ -30,14 +30,7 @@ const Layout = ({ location, title, children }) => {
         <Row>
           <Sidebar />
 
-          <Col xs={8} style={{ backgroundColor: "black" }}>
-            <ul>
-              Content :<li>Carousel</li>
-              <li>News</li>
-              <li>Activities</li>
-            </ul>
-            {children}
-          </Col>
+          <Col xs={8}>{children}</Col>
           <Col xs={2} style={{ backgroundColor: "red" }}>
             Social media
           </Col>

@@ -10,15 +10,12 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     width: "100%",
-    height: "70vh",
-    alignItems: "center",
     padding: "2em",
     fontFamily: theme.typography.fontFamily,
   },
   paper: {
     minHeight: "30%",
     width: "100%",
-
     position: "relative",
   },
   links: {
@@ -43,13 +40,13 @@ const Sidebar = ({}) => {
   return (
     <Col xs={2} className={classes.root}>
       <Paper className={classes.paper} elevation={1} p={2}>
-        <Link>
+        <Link to="/">
           <Typography variant="h6" className={classes.links}>
             NOTICIAS
           </Typography>
         </Link>
         <Divider />
-        <Link>
+        <Link to="/">
           <Typography variant="h6" className={classes.links}>
             SOBRE EL CENTRO
           </Typography>
